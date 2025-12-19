@@ -1,0 +1,477 @@
+@font-face {
+    font-family: 'Isometric Repro Variable Screen';
+    src: url('./isometric-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+    min-height: 100%;
+    margin: 0;
+    font-family: 'Isometric Repro Variable Screen', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+}
+  
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  display: inline-block;
+}
+
+html.w-mod-touch * {
+  background-attachment: scroll !important;
+}
+  
+/* Webflow classes used in index.html */
+.w-embed:before, .w-embed:after {
+  content: " ";
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
+}
+
+.w-embed:after {
+  clear: both;
+}
+
+.w-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w-container:before, .w-container:after {
+  content: " ";
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
+}
+
+.w-container:after {
+  clear: both;
+}
+
+/* Custom classes used in index.html */
+:root {
+  --thrive-tan: #cdc5b4;
+  --thrive-red: #b3121f;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  flex: 0 auto;
+  order: 1;
+  align-self: auto;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: .5;
+}
+
+.body {
+  cursor: auto;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.link {
+  color: #202020;
+  cursor: pointer;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.link:hover {
+  opacity: .5;
+  text-decoration: underline;
+}
+
+.image-4 {
+  transform: scale(4);
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+}
+  
+.thrive-inc-text {
+  flex: 0 auto;
+  align-self: auto;
+  align-items: center;
+  margin-bottom: 0;
+  margin-left: 6px;
+  font-size: 25px;
+  display: flex;
+}
+
+.thrive-inc-container-logo {
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  display: flex;
+}
+
+.ascii-3d {
+  z-index: 0;
+  cursor: none;
+  background-color: #0000;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  width: 450px;
+  height: 450px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  position: fixed;
+  top: auto;
+  left: auto;
+  right: auto;
+}
+
+.info_container_v2 {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  opacity: 1 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mouse-follow-section {
+    z-index: 0;
+    cursor: default;
+    justify-content: center;
+    align-items: stretch;
+    height: 100%;
+    min-height: 100%;
+      display: flex;
+      position: fixed;
+    inset: 0%;
+    overflow: visible;
+    }
+  
+
+
+/* backgrounds */
+.day {
+    /* background: #eeece8; */
+    background: #F9DFE2;
+    color: #393231;
+    }
+    
+.night { 
+    background: #2A2828; 
+    color: #d5b4b4; 
+    /* background: #F9DFE2;
+    color: #393231; 
+    color: #eeece8*/
+}
+
+.night .clock {
+    color: #d5b4b4; 
+}
+
+.night .link { 
+    text-decoration: none; 
+    color: #393231; 
+}
+
+.night .ticker-footer {
+    background: #2A2828;
+    color: #d5b4b4;
+    border-top: 1px solid #d5b4b4; 
+}
+
+.night .total-issuances-label {
+    color: #2A2828;
+    background: #d5b4b4;
+    border-right: 1px solid #d5b4b4;
+}
+
+.night .total-issuances-value {
+    background: #2A2828;
+    color: #d5b4b4;
+    border-top: 1px solid #d5b4b4;
+    border-right: 1px solid #d5b4b4;
+}
+
+.night .ticker-label-box {
+    color: #2A2828;
+    background: #d5b4b4;
+    border-right: 1px solid #d5b4b4;
+}
+
+.night .ticker-item {
+    color: #d5b4b4;
+}
+
+.night .ticker-separator {
+    color: #d5b4b4;
+}
+   
+.day .link { 
+text-decoration: none; 
+/* color:  #CDC5B4;  */
+color:  #393231; 
+
+}
+
+.day a:visited { 
+text-decoration: none; 
+color:  #CDC5B4; 
+}
+
+.night a:visited { 
+text-decoration: none; 
+color:  #393231; 
+}
+
+
+.clock {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: 100;
+    color: #393231;
+    text-align: center;
+    padding: 10px 20px;
+    letter-spacing: 0.5px;
+}
+
+.total-issuances-label {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  min-width: 150px;
+  background-color: #393231;
+  color: #F9DFE2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-family: 'Isometric Repro Variable Screen', monospace;
+  z-index: 1001;
+  border-right: 1px solid #393231;
+}
+
+.total-issuances-value {
+  position: fixed;
+  left: 150px;
+  bottom: 0;
+  height: 50px;
+  min-width: 60px;
+  background: #F9DFE2;
+  border-top: 1px solid #393231;
+  border-right: 1px solid #393231;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-family: 'Isometric Repro Variable Screen', monospace;
+  z-index: 1001;
+}
+
+.ticker-label-box {
+    position: fixed;
+    left: 200px; /* Initial position, will be updated dynamically by positionTickerLabelBox() */
+    bottom: 0;
+    height: 50px;
+    min-width: 180px;
+    background-color: #393231;
+    color: #F9DFE2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    font-family: 'Isometric Repro Variable Screen', monospace;
+    z-index: 1001;
+    border-right: 1px solid #393231;
+}
+
+.ticker-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+    width: 100%;
+  height: 50px;
+  background-color: rgba(249, 223, 226, 0.95);
+  border-top: 1px solid #393231;
+  overflow: hidden;
+  z-index: 1000;
+    display: flex;
+  align-items: center;
+}
+
+
+.ticker-container {
+    display: flex;
+    position: fixed;
+    left: 120px; /* Initial position, marginLeft will be updated dynamically by positionTickerLabelBox() */
+    white-space: nowrap;
+    animation: scroll-left 45s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 40px;
+    font-family: 'Isometric Repro Variable Screen', monospace;
+    font-size: 14px;
+    color: #393231;
+    white-space: nowrap;
+}
+
+.ticker-separator {
+    display: inline-block;
+    padding: 0 20px;
+    color: #393231;
+    font-size: 14px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .mouse-follow-section {
+        display: none;
+    }
+    
+    .copyright {
+        width: 11.5px;
+        height: 11.5px;
+    }
+    
+    .ticker-footer {
+        height: 40px;
+    }
+    
+    .total-issuances-label {
+        height: 40px;
+        min-width: 120px;
+        font-size: 12px;
+        padding: 0 15px;
+    }
+    
+    .total-issuances-value {
+        height: 40px;
+        left: 120px;
+        min-width: 50px;
+        font-size: 12px;
+        padding: 0 15px;
+    }
+    
+    .ticker-label-box {
+        height: 40px;
+        left: 170px; /* Initial position for mobile, will be updated dynamically */
+        min-width: 150px;
+        font-size: 12px;
+        padding: 0 15px;
+    }
+    
+    .ticker-container {
+        margin-left: 320px;
+    }
+    
+    .ticker-item {
+        font-size: 12px;
+        padding: 0 30px;
+    }
+  }
+
+  
+@media screen and (max-width: 991px) {
+  .w-container {
+      max-width: 728px;
+  }
+
+  .info_container_v2 {
+    z-index: 4;
+  }
+}
+  
+@media screen and (max-width: 767px) {
+  .info_container_v2 {
+      flex-flow: wrap;
+    flex: 0 auto;
+    justify-content: center;
+      align-self: center;
+    align-items: center;
+      padding-left: 15%;
+      padding-right: 15%;
+    display: block;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+  }
+}
+  
+@media screen and (max-width: 479px) {
+  .body {
+    justify-content: center;
+    display: block;
+  }
+
+  .image-4 {
+    margin-left: auto;
+    display: block;
+  }
+
+  .thrive-inc-text {
+    flex: 0 auto;
+      justify-content: center;
+      margin-left: 10px;
+    margin-right: auto;
+      position: relative;
+      left: auto;
+      right: auto;
+  }
+
+  .thrive-inc-container-logo {
+      text-align: center;
+    justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+      position: fixed;
+      inset: 30px 0% auto;
+  }
+  
+  .ascii-3d {
+      width: 200px;
+      height: 200px;
+      position: fixed;
+  }
+}

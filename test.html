@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Issuances from credits.py</title>
+  <style>
+    body {
+      font-family: 'Isometric Repro Variable Screen', monospace, sans-serif;
+      padding: 20px;
+      background-color: #F9DFE2;
+      color: #393231;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    #output {
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #393231;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      min-height: 100px;
+    }
+    .loading {
+      color: #666;
+      font-style: italic;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Issuances from credits.py</h1>
+  <div id="output" class="loading">Loading…</div>
+
+  <script>
+    async function loadIssuances() {
+      const output = document.getElementById("output");
+      
+      try {
+        // Calls main.py which uses credits.py's get_issuances_list() function
+        const res = await fetch("http://localhost:8000/issuances");
+        
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+        }
+
+        const data = await res.json();
+        const rows = data.rows;  // ['name: credits', 'name2: credits2', ...]
+
+        // Display as text - join with newlines
+        output.textContent = rows.join('\n');
+        output.classList.remove('loading');
+        
+      } catch (err) {
+        output.textContent = `Error: ${err.toString()}\n\nMake sure the FastAPI server is running:\nuvicorn main:app --reload`;
+        output.classList.remove('loading');
+        output.classList.add('error');
+      }
+    }
+
+    // Load when page loads
+    loadIssuances();
+  </script>
+</body>
+</html>
+
